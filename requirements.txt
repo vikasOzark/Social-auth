@@ -1,0 +1,3 @@
+django
+dajngo-allauth
+django-extensions werkzeug openssl
