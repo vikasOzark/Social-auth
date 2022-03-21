@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %} Home page {% endblock title %} 
+{% block content %} 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+<div class="container center ">
+  <div class="center border bg-light p-2 row d-flex justify-content-center shadow-lg ">
+    <h4>Greeting ! </h4>
+    <h6 >
+    {% if user.is_authenticated %}
+      {{request.user}}
+    {% else %}
+      Please login here
+    {% endif %}
+    </h6>
+  
+    <div class="col justify-content-around col-sm-12">
+     <a href="https://127.0.0.1:8000/accounts/facebook/login/?process=login" class="btn btn-info text-decoration-none mb-2 shadow-sm">Facebook login</a>
+     <a href="https://127.0.0.1:8000/accounts/google/login/?process=login" class="btn btn-outline-warning text-decoration-none mb-2 shadow-sm">Google login</a>
+     <a href="accounts/logout"class="btn btn-outline-dark mb-2" >logout</a>
+    </div>
+  </div>  
+</div>
+{% endblock content %}
